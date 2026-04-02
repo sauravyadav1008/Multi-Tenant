@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/sora/400.css';
+@import '@fontsource/sora/600.css';
+
+:root {
+  --bg-deep: #070d18;
+  --text-primary: #f5f8ff;
+  --text-muted: #9ca8bf;
+  --accent-coral: #ff694f;
+  --accent-teal: #1fd3bc;
+  --card-glow: rgba(32, 222, 198, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Sora', 'Segoe UI', sans-serif;
+  background: radial-gradient(1200px 700px at 8% 5%, #10243d 0%, transparent 50%),
+    radial-gradient(1000px 600px at 90% -2%, #173451 0%, transparent 48%),
+    var(--bg-deep);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading {
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: radial-gradient(700px 400px at 10% 5%, #122846 0%, transparent 58%),
+      radial-gradient(650px 420px at 88% -2%, #16334f 0%, transparent 52%),
+      var(--bg-deep);
+  }
+}

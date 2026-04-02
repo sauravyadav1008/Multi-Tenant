@@ -1,0 +1,40 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependency / build output
+**/node_modules/
+**/dist/
+**/build/
+**/.turbo/
+**/.cache/
+
+# Test output
+**/coverage/
+**/.nyc_output/
+
+# Prisma / databases
+**/prisma/dev.db
+**/*.sqlite
+
+# Runtime temp
+tmp/
+.temp/
+
+# Keep lock files tracked by default
+# (Do not ignore package-lock.json)
