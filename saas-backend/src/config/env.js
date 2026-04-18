@@ -1,6 +1,17 @@
-import dotenv from "dotenv";
+console.log("ENV.JS EXECUTING...");
+import 'dotenv/config';
 
-dotenv.config();
+// Store the original NODE_ENV (from vitest) before loading .env
+const originalNodeEnv = process.env.NODE_ENV;
+const isVitest = process.env.VITEST;
+
+// Restore NODE_ENV if we're in test mode
+if (originalNodeEnv === "test" || isVitest) {
+  process.env.NODE_ENV = "test";
+}
+
+console.log("DATABASE_URL starting with:", process.env.DATABASE_URL?.substring(0, 20));
+console.log("NODE_ENV:", process.env.NODE_ENV, "VITEST:", process.env.VITEST);
 
 const required = ["DATABASE_URL", "JWT_ACCESS_SECRET", "JWT_REFRESH_SECRET"];
 
@@ -21,6 +32,7 @@ const env = {
 	CORS_ORIGIN: process.env.CORS_ORIGIN || "http://localhost:5173",
 	COOKIE_DOMAIN: process.env.COOKIE_DOMAIN || undefined,
 	COOKIE_SAME_SITE: process.env.COOKIE_SAME_SITE || "lax",
+	REDIS_URL: process.env.REDIS_URL || "redis://localhost:6379",
 };
 
 export default env;
